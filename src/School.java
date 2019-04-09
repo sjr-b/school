@@ -1,12 +1,11 @@
 public class School {
 
     private String name;
-    private Section [] sections;
+    private Section [] sections = new Section[200];
     private int sectionCount;
 
     public School (String name){
         this.name = name;
-        this.sections = new Section[200];
         this.sectionCount = 0;
     }
 

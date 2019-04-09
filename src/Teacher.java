@@ -1,13 +1,13 @@
-public class Teacher{
+public class Teacher extends Person {
 
-    private Section[] sections;
+    private Section[] sections = new Section[10];
     private String subject;
     private int sectionCount;
 
-    public Teacher(String subject, int count){
-        this.sections = new Section[10];
+    public Teacher(String name, int id, String subject){
+        super(name, id);
         this.subject = subject;
-        this.sectionCount = count;
+        this.sectionCount = 0;
     }
 
     public String getSubject(){

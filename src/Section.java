@@ -3,15 +3,13 @@ import java.util.Arrays;
 public class Section {
 
     private Teacher teacher;
-    private Student[] students;
+    private Student[] students = new Student[50];
     private String name;
     private int currentSize;
 
-    public Section (Teacher teacher, String name, int amount){
-        this.teacher = teacher;
-        this.students = new Student[50];
+    public Section (String name){
         this.name = name;
-        this.currentSize = amount;
+        this.currentSize = 0;
     }
 
     public Teacher getTeacher(){
@@ -40,7 +38,11 @@ public class Section {
     }
 
     public String toString() {
-        return "Section name : " + this.name + " || teacher: " + this.teacher.getName() + " || students: "
-                + Arrays.toString(this.students) + " || current size: " + String.valueOf(this.currentSize);
+        String studentList = "";
+        for (int a = 0; a <= currentSize - 2; a++){
+            studentList += this.students[a].getName() + ", ";
+        }
+        studentList += this.students[currentSize - 1].getName();
+        return "This " + this.name + " class is taught by " + teacher.getName() + " and has " + currentSize + " students: " + studentList;
     }
 }
